@@ -17,6 +17,9 @@ public class Sistema {
 	
 	public static void main(String[] args) throws SAXException, IOException, ParserConfigurationException {
 		DocumentBuilderFactory fabrica = DocumentBuilderFactory.newInstance();
+		fabrica.setValidating(true);
+		fabrica.setNamespaceAware(true);
+		fabrica.setAttribute("http://java.sun.com/xml/jaxp/properties/schemaLanguage", "http://www.w3.org/2001/XMLSchema");
 		DocumentBuilder newDocumentBuilder = fabrica.newDocumentBuilder();
 		Document parse = newDocumentBuilder.parse("src/venda.xml");
 		
